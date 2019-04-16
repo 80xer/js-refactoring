@@ -1,0 +1,18 @@
+{
+  "name": "js-refactoring",
+  "version": "1.0.0",
+  "description": "Javascript Refactoring",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.1.2",
+    "nyc": "^13.3.0"
+  }
+}
