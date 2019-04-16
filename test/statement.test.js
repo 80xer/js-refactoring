@@ -1,4 +1,4 @@
-const statement = require('../src/statement');
+const { statement, htmlStatement } = require('../src/statement');
 const assert = require('assert');
 
 describe('statement', () => {
@@ -203,6 +203,36 @@ describe('statement', () => {
         '  as-like: $548.00 (31 seats)\n' +
         'Amount owed is $1,898.00\n' +
         'You earned 14 credits\n'
+    );
+  });
+
+  it('HTML Rendering 테스트', () => {
+    let invoice = {
+      customer: 'Gildong',
+      performances: [
+        {
+          playID: 0,
+          audience: 30,
+        },
+      ],
+    };
+
+    let plays = {
+      0: {
+        name: 'Hamlet',
+        type: 'tragedy',
+      },
+    };
+
+    let result = htmlStatement(invoice, plays);
+    assert.equal(
+      result,
+      '<h1>Statement for Gildong</h1>\n' +
+        '<table>\n' +
+        '<tr><th>play</th><th>seats</th><th>cost</th></tr>  <tr><td>Hamlet</td><td>30</td><td>$400.00</td></tr>\n' +
+        '</table>\n' +
+        '<p>Amount owed is <em>$400.00</em></p>\n' +
+        '<p>You earned <em>0</em> credits</p>\n'
     );
   });
 });
