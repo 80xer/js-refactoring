@@ -60,4 +60,8 @@
 - 테스트 수정
 
 ### #3. switch 분기에 로직 추가
-#### 1. PerformanceCalculator 클래스 추가
+1. PerformanceCalculator 클래스 추가
+2. play, amount, volumeCredits 이동
+3. createPerformanceCalculator 추가
+4. Tregedy, Comedy Calculator 추가(amount, volumeCredits override)
+5. total 함수 리팩토링(reduce)
